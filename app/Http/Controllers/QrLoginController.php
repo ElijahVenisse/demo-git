@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+
 class QrLoginController extends Controller
 {   // this Function show that Page we want to loging by Scanner of QrCode
     public function index(Request $request) {
@@ -25,4 +26,5 @@ class QrLoginController extends Controller
             }
 			return $result;
 	}
+	
 }

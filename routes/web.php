@@ -27,3 +27,16 @@ Route::post('qrLogin', ['uses' => 'App\Http\Controllers\QrLoginController@checkU
 
 //Route::resource('users', 'UserController');
 Route::resource('users', UserController::class);
+
+// Admin routes
+Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::resource('users', UserController::class);
+});
+
+// Inside routes/web.php
+//Route::resource('users', UserController::class)->middleware(['auth', 'admin']);
+
+
+//show qr
+// Route::get('/users/{user}', 'App\Http\Controllers\UserController@show')->name('users.show');
+

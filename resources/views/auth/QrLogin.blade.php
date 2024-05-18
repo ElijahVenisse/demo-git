@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <!-- this function of java Script play Camera -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
 <!-- Header --> 
 <div class="container-fluid header_se">
@@ -16,7 +16,7 @@
    </div>
   </div>
  <script type="text/javascript">
-     // after success to play camera Webcam Ajax paly to send data to Controller
+
   function onScanSuccess(data) {
     $.ajax({
       type: "POST",
@@ -45,6 +45,7 @@
 </div>
 <hr/>
 
+
 <script type="text/javascript">
   $.ajaxSetup({
   headers: {
@@ -52,56 +53,48 @@
    }
   });
 </script>
-<style>
-  .result{
-    background-color: green;
-    color:#fff;
-    padding:20px;
-  }
-  .row{
-    display:flex;
-  }
-  #reader {
-    background: black;
-    width:500px;
-  }
-  button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 6px;
-}
-a#reader__dashboard_section_swaplink {
-  background-color: blue; /* Green */
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 6px;
-}
-span a{
-  display:none
-}
 
-#reader__camera_selection{
-  background: blueviolet;
-  color: aliceblue;
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, #56CCF2, #F2C94C);
 }
-#reader__dashboard_section_csr span{
-  color:red
-}
-</style>
+        .result {
+            background-color: green;
+            color: #fff;
+            padding: 20px;
+        }
+        .row {
+            display: flex;
+        }
+        #reader {
+            background: black;
+            width: 500px;
+        }
+        button, a#reader__dashboard_section_swaplink {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+        span a {
+            display: none;
+        }
+        #reader__camera_selection {
+            background: blueviolet;
+            color: aliceblue;
+        }
+        #reader__dashboard_section_csr span {
+            color: red;
+        }
+    </style>
 @yield('scripts')
 @endsection

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <!-- CSRF Token -->
@@ -14,14 +15,23 @@
  <!-- Styles -->
  <link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+ <style>
+   .navbar {
+     height: calc(80px + 10px); /* Original height + 10px */
+   }
+   .navbar-brand {
+     padding: 15px 20px; /* Adjust as needed */
+   }
+ </style>
 </head>
 <body>
  <div id="app">
   <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
    <div class="container">
     <a class="navbar-brand" href="{{ url('/') }}">
-     <!-- {{ config('app.name', 'PSU') }} -->
-     PSU
+    <img src="{{ asset('storage/images/logoo.png') }}" alt="PSU Logo" height="50">
+ <!-- Replace "path_to_your_logo" with the actual path to your logo -->
+     Pangasinan State University
     </a>
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
