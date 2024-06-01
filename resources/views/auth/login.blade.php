@@ -1,3 +1,4 @@
+{{-- resources/views/auth/login.blade.php --}}
 @extends('layouts.app')
 
 @section('content')
@@ -8,14 +9,6 @@
         font-family: Arial, Helvetica, sans-serif;
         background-image: linear-gradient(to right, #56CCF2, #F2C94C);
     }
-    .background-gradient {
-    background-image: linear-gradient(to right, #56CCF2, #F2C94C);
- 
-    width: 100%; 
-    height: 300px; 
-    border: 1px solid #ccc; 
-}
-
     .container {
         height: 100vh;
         display: flex;
@@ -60,42 +53,47 @@
     .btn-primary:hover {
         background-color: #555; 
     }
-    .logo {
-        height: 50px; /* Logo size */
-    }
 </style>
 
 <div class="container">
     <div class="card">
-      
         <div class="card-body">
-     
-            <h3>Sign into your account</h3>
+            <h3>Login</h3>
+
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
                 <div class="form-group">
-                    <label for="email">Email address</label>
+                    <label for="email">E-Mail Address</label>
                     <input type="email" id="email" class="form-control" name="email" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Password (Student ID)</label>
+                    <label for="password">Password</label>
                     <input type="password" id="password" class="form-control" name="password" required>
-                </div>
-
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="remember">
-                    <label class="form-check-label" for="remember">Remember Me</label>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Login</button>
 
-                <!-- <div class="links">
-                    <a href="#" class="small">Forgot password?</a>
-                    <br>
-                    <a href="#" class="small">Don't have an account? Register here</a>
-                </div> -->
+                <div class="mt-3">
+                    <a href="{{ route('register') }}">Don't have an account? Register here</a>
+                </div>
             </form>
         </div>
         <div class="card-img">

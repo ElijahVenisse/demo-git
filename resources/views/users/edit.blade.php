@@ -29,13 +29,33 @@
         </div>
 
         <div class="form-group">
-            <label for="department">Department</label>
-            <input type="text" class="form-control" id="department" name="department" value="{{ $user->department }}" required>
+            <label for="department">Course</label>
+            <select class="form-control" id="department" name="department" required>
+                <option value="BSIT" {{ $user->department == 'BSIT' ? 'selected' : '' }}>BSIT</option>
+                <option value="BSMATH" {{ $user->department == 'BSMATH' ? 'selected' : '' }}>BSMATH</option>
+            </select>
         </div>
 
         <div class="form-group">
             <label for="year_level">Year Level</label>
-            <input type="text" class="form-control" id="year_level" name="year_level" value="{{ $user->year_level }}" required>
+            <select class="form-control" id="year_level" name="year_level" required>
+                <option value="1" {{ $user->year_level == '1' ? 'selected' : '' }}>1st year</option>
+                <option value="2" {{ $user->year_level == '2' ? 'selected' : '' }}>2nd year</option>
+                <option value="3" {{ $user->year_level == '3' ? 'selected' : '' }}>3rd year</option>
+                <option value="4" {{ $user->year_level == '4' ? 'selected' : '' }}>4th year</option>
+                <option value="5" {{ $user->year_level == '5' ? 'selected' : '' }}>5th year</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="section">Section</label>
+            <select class="form-control" id="section" name="section" required>
+                <option value="A" {{ $user->section == 'A' ? 'selected' : '' }}>A</option>
+                <option value="B" {{ $user->section == 'B' ? 'selected' : '' }}>B</option>
+                <option value="C" {{ $user->section == 'C' ? 'selected' : '' }}>C</option>
+                <option value="D" {{ $user->section == 'D' ? 'selected' : '' }}>D</option>
+                <option value="E" {{ $user->section == 'E' ? 'selected' : '' }}>E</option>
+            </select>
         </div>
 
         <button type="submit" class="btn btn-primary">Update User</button>

@@ -20,8 +20,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'student_id', 'department', 'year_level'
+        'student_id', 
+        'department', 
+        'year_level', 
+        'section', // Add section here
+        'last_login_at',
+        'last_logout_at'
     ];
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -40,5 +46,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'last_login_at' => 'datetime',
+        'last_logout_at' => 'datetime',
     ];
 }

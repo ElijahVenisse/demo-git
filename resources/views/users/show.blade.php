@@ -15,5 +15,5 @@
         <img src="{{ $qrCodeDataUri }}" alt="User QR Code" style="height: 200px; width: 200px;">
     </div>
 </div>
-<a href="{{ route('users.index') }}" class="btn btn-secondary">Back</a> <!-- Back Button -->
+
 @endsection

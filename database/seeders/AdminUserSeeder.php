@@ -1,5 +1,6 @@
 <?php
 
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -15,12 +16,15 @@ class AdminUserSeeder extends Seeder
      */
     public function run()
     {
-        //
         DB::table('users')->insert([
             'name' => 'Admin',
-            'email' => 'admin@gmail.com',
+            'email' => 'admin123@gmail.com',
             'password' => Hash::make('admin123'),
-            'is_admin' => true
+            'student_id' => 'admin123',
+            'department' => 'Administration',
+            'year_level' => 'N/A',
+            'section' => 'N/A',
+            'is_admin' => true,
         ]);
     }
 }
